@@ -12,10 +12,14 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // routes
+//app.use('/', require('./routes/index'))
+
+
 app.use('/api', require('./routes/index'))
 
 app.use(express.static(path.join(__dirname, './dist')));
 app.get('/', function(req, res, next) {res.sendFile(path.join(__dirname, './dist', 'index.html'));});
+
 
 
 // start server 
